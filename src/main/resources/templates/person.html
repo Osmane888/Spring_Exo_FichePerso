@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+    <link rel="stylesheet" th:href="@{style/style.css}">
+</head>
+<body>
+
+<div id="noms">
+<p th:text="${person.getName()}"></p>
+<p th:text="${person.getFirstname()}"></p>
+</div>
+
+<h2>Mes compétences techniques</h2>
+<ul th:each="skill : ${person.skills}">
+    <li>
+        <p th:text="${skill.title}"></p>
+            <button>
+                <a th:href="@{/person/skill/{title} (title=${skill.title})}">details</a>
+            </button>
+    </li>
+</ul>
+
+
+<h2>Ma liste de contacts</h2>
+<ul th:each="contact : ${person.contacts}">
+    <li>
+        <span th:text="${contact.firstname}"></span>
+        <span th:text="${contact.name}"></span>
+        <span th:text="${contact.email}"></span>
+        <span th:text="${contact.phoneNumber}"></span>
+    </li>
+</ul>
+<button><a th:href="@{person/addContact}">Ajouter votre contact à la liste</a></button>
+
+</body>
+</html>

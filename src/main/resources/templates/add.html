@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD CONTACTS</title>
+</head>
+<body>
+
+<h1>Ajoutez vos informations de contact</h1>
+
+
+<form method="post" th:action="@{/person/addContact}" th:object="${contact}">
+  <div>
+    <label for="name"> NOM : </label>
+    <input id="name" type="text" th:field="*{name}">
+  </div>
+  <div>
+    <label for="firstname"> PRENOM : </label>
+    <input id="firstname" type="text" th:field="*{firstname}">
+  </div>
+  <div>
+    <label for="email"> EMAIL : </label>
+    <input id="email" type="text" th:field="*{email}">
+  </div>
+  <div>
+    <label for="phoneNumber"> NUMERO DE TELEPHONE : </label>
+    <input id="phoneNumber" type="text" th:field="*{phoneNumber}">
+  </div>
+  <button type="submit">Ajouter</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+#noms{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+#noms, p{
+    margin: 0.8rem;
+}
